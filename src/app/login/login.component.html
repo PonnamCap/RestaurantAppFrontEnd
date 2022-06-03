@@ -1,0 +1,118 @@
+<style>
+    * {
+      box-sizing: border-box;
+    }
+  
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background-image: url("asset/images.jpg");
+    }
+  
+    .header {
+      overflow: hidden;
+      background-color: lightblue;
+      padding: 20px 10px;
+    }
+  
+    .header a {
+      float: left;
+      color: black;
+      text-align: center;
+      padding: 12px;
+      text-decoration: none;
+      font-size: 18px;
+      line-height: 25px;
+      border-radius: 4px;
+    }
+  
+    .header a.logo {
+      font-size: 25px;
+      font-weight: bold;
+    }
+  
+    .header a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+  
+    .header a.active {
+      background-color: dodgerblue;
+      color: white;
+    }
+  
+    .header-right {
+      float: right;
+    }
+  
+    @media screen and (max-width: 500px) {
+      .header a {
+        float: none;
+        display: block;
+        text-align: left;
+      }
+      .header-right {
+        float: none;
+      }
+    }
+   
+  </style>
+  
+  <div class="header">
+    <a href="#default" class="logo">Welcome To Restaurant App</a>
+    <div class="header-right">
+      <a class="active" routerLink="/signup" routerLinkActive="active">Signup</a>
+      <a routerLink="/contact" routerLinkActive="active">Contact</a>
+      <a routerLink="/about" routerLinkActive="active">About</a>
+    </div>
+  </div>
+  <div class="formDiv">
+    
+    <form [formGroup]="registrationForm" (ngSubmit)="register()">
+      <div class="mb-3">
+        <label for="username" class="form-label">User Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="username"
+          placeholder="Enter User name"
+          name="username"
+          formControlName="username"
+        />
+        <span *ngIf="username && username.invalid && username.touched">
+          User name should be minimum 3 character.
+        </span>
+      </div>
+  
+      <div class="mb-3">
+        <label for="pwd" class="form-label">Password</label>
+        <input
+          type="password"
+          class="form-control"
+          id="pwd"
+          placeholder="Enter password"
+          name="password"
+          formControlName="password"
+        />
+        <span *ngIf="password && password.invalid && password.touched">
+          Password is required.
+        </span>
+      </div>
+      <br />
+  
+      <button
+        type="submit"
+        class="btn btn-primary form-control"
+        [disabled]="registrationForm.invalid"
+      >
+        Login
+      </button>
+      <a routerLink="/signup" style="color: red; text-decoration: none;">New to RestaurantApp? Register here.</a>
+    </form>
+  </div>
+ <br><br>
+  <footer>
+    <p>
+      RestaurantApp.com@copyright2022<br />
+    </p>
+  </footer>

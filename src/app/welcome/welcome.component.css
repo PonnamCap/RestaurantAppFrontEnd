@@ -1,0 +1,12 @@
+h1{
+    text-align: center;
+}
+
+footer{
+    background-color: firebrick;
+      padding: 10px;
+      text-align: center;
+      color: white;
+      position: fixed;
+      width: 100%;
+}
