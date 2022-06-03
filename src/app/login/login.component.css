@@ -5,9 +5,17 @@
     margin-left: 25%;
     margin-right: 25%;
     background-color:aliceblue;
-    padding: 5%;
-  }
-  
-  span{
+    padding: 3%;
+}
+
+span{
     color: red;
-  }
+}
+
+
+footer{
+    background-color: grey;
+      padding: 10px;
+      text-align: center;
+      color: white;
+    }

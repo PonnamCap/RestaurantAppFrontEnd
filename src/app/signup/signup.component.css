@@ -6,8 +6,16 @@
     margin-right: 25%;
     background-color:aliceblue;
     padding: 5%;
-  }
-  
-  span{
+}
+
+span{
     color: red;
-  }
+}
+
+
+footer{
+    background-color: turquoise;
+      padding: 10px;
+      text-align: center;
+      color: white;
+    }
